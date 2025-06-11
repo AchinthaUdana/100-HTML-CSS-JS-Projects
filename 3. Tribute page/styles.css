@@ -1,0 +1,265 @@
+:root {
+  --primary: #1a1a2e;
+  --secondary: #16213e;
+  --accent: #0f4c75;
+  --highlight: #00b4d8;
+  --text: #e6f7ff;
+  --text-secondary: #b3e0ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--primary);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+  padding: 2rem 0;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(
+    to right,
+    var(--highlight),
+    var(--text-secondary)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+/* Hero Image */
+.hero-image {
+  margin: 2rem 0;
+  text-align: center;
+  position: relative;
+}
+
+.hero-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 3px solid var(--accent);
+}
+
+.hero-image figcaption {
+  margin-top: 1rem;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+/* Tribute Content */
+.tribute-content {
+  padding: 2rem 0;
+}
+
+.tribute-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--highlight);
+  text-align: center;
+  position: relative;
+}
+
+.tribute-content h2::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 3px;
+  background: var(--highlight);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tribute-content p {
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+  text-align: justify;
+}
+
+/* Timeline Section */
+.timeline {
+  margin: 3rem 0;
+}
+
+.timeline h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--highlight);
+  text-align: center;
+  position: relative;
+}
+
+.timeline h2::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 3px;
+  background: var(--highlight);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-left: 30px;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 15px;
+  height: 15px;
+  background: var(--highlight);
+  border-radius: 50%;
+}
+
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 20px;
+  width: 2px;
+  height: calc(100% - 15px);
+  background: var(--accent);
+}
+
+.timeline-item:last-child::after {
+  display: none;
+}
+
+.timeline-year {
+  font-weight: bold;
+  color: var(--highlight);
+  margin-right: 1rem;
+  min-width: 80px;
+}
+
+.timeline-text {
+  flex: 1;
+}
+
+/* Quotes Section */
+.quotes {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: var(--secondary);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.quotes h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--highlight);
+  text-align: center;
+}
+
+.quote-item {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-left: 3px solid var(--highlight);
+  background: rgba(0, 180, 216, 0.1);
+  border-radius: 0 5px 5px 0;
+}
+
+.quote-item p {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.quote-item .author {
+  text-align: right;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background: var(--secondary);
+  padding: 2rem 0;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+footer p {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+.footer-link {
+  color: var(--highlight);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  .tribute-content h2,
+  .timeline h2,
+  .quotes h2 {
+    font-size: 1.8rem;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+  }
+
+  .timeline-year {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animated {
+  animation: fadeIn 1s ease;
+}
